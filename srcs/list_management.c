@@ -21,7 +21,6 @@ void    ft_remove_from_stack(t_lstack *s)
         s->front->n = 0;
         free(s->front);
         s->front = NULL;
-        //s->rear = NULL; // a priori redondant peut e suppr
     }
     else
     {

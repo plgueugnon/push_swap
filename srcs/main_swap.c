@@ -23,16 +23,7 @@ int     main(int argc, char **argv)
                 i++;
             }
         }
-        t_node *iter;
-        iter = a->front;
-        printf("check entree\n");
-        while (iter)
-        {
-            printf("%d\n", (int)iter->n);
-            iter = iter->next;
-        }
-        ft_parse_cmd(&cmd, a);
-        ft_exec_cmd_n_evaluate(a, cmd);
-    }  
+        ft_evaluate_then_sort(a, &cmd);
+    }
     return (0);
 }

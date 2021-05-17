@@ -61,36 +61,27 @@ int     ft_encode_cmd(char *s)
     return (0);
 }
 
-void    ft_transform_cmd_list_to_tab(t_list *list, t_lstack *a, int **cmd)
+void    ft_transform_cmd_list_to_stack(t_list *list, t_lstack *a, t_lstack **cmd)
 {
     t_list *iter;
-    int c;
     
-    c = ft_lstsize(list);
-    // printf("%d\n", c);
     iter = list;
-    // printf("%p\n", *cmd);
-    // printf("%p\n", cmd);
-    *cmd = malloc(sizeof(int *) * (c + 1));
-    // printf("%p\n", *cmd);
-    // printf("%p\n", cmd);
+    *cmd = ft_init_stack();
     if (!*cmd)
         ft_error_cmd(list, a);
-    c = 0;
-    // *(cmd)[0] = 1;
-    // printf("%d\n", *(cmd)[0]);
     while (iter)
     {
-        (*cmd)[c] = ft_encode_cmd(iter->content);
-        // printf("%d\n", (*cmd)[c]);
-        c++;
+        if(!ft_queue_to_stack(*cmd, ft_encode_cmd(iter->content)))
+        {
+            ft_cleanup_stack(*cmd);
+            ft_error_cmd(list, a);
+        }
         iter = iter->next;
     }
-    (*cmd)[c] = 0;
     ft_lstclear(&list, &ft_del);
 }
 
-void    ft_parse_cmd(int **cmd, t_lstack *a)
+void    ft_parse_cmd(t_lstack **cmd, t_lstack *a)
 {
     char *line;
     t_list *list;
@@ -100,11 +91,7 @@ void    ft_parse_cmd(int **cmd, t_lstack *a)
     while (get_next_line(0, &line) > 0)
     {
         list = ft_lst_append(list, line);
-        // printf("check line %p\n", line);
-        // printf("%s\n", line);
-        // printf("%s\n", list->content);
     }
     ft_check_cmd_validity(list, a);
-    ft_transform_cmd_list_to_tab(list, a, cmd);
-    // printf("%p\n", cmd);
+    ft_transform_cmd_list_to_stack(list, a, cmd);
 }

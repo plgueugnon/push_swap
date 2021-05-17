@@ -35,9 +35,10 @@ LIB_LIBFT_DIR	= $(LIBS_DIR)/libft.a
 
 #SRCS		=	$(notdir $(shell find $(SRCS_DIR) -type f -name *.c))
 #SRCS		=	
-SRCS_SWAP		=	test_swap.c
+SRCS_SWAP		=	main_swap.c sort_arg.c list_management.c evaluate_then_sort.c \
+					parse_arg.c error.c exec_cmd_n_evaluate.c #retirer ce dernier fichier qd poss
 SRCS_CHECKER	=	main_checker.c parse_cmd.c list_management.c error.c \
-					parse_arg.c evaluate_n_sort.c sort_arg.c
+					parse_arg.c exec_cmd_n_evaluate.c sort_arg.c
 
 ################################################################################
 #                              Commands and arguments                          #
@@ -106,7 +107,7 @@ clean:
 
 fclean: clean
 		@ echo "$(_RED)[cleaning up .out, objects & library files]"
-		$(RM) $(NAME)
+		$(RM) $(NAME_CHECKER) $(NAME_SWAP)
 		@ make -C $(LIBFT_DIR) -f $(LIBFT_MAKE) fclean
 
 re:	fclean all

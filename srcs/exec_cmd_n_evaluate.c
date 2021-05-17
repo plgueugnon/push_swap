@@ -1,6 +1,6 @@
 #include "pushswap.h"
 
-int     ft_evaluate_stack(t_lstack *a, t_lstack *b)
+int     ft_evaluate_stack(t_lstack *a, t_lstack *b) // a deplacer
 {
     t_node *iter;
     t_node *jter;
@@ -63,22 +63,45 @@ void    ft_exec_cmd(int cmd, t_lstack *a, t_lstack *b)
         ft_exec_rotate_cmd(cmd, a, b);
 }
 
-void    ft_sort_n_evaluate(t_lstack *a, int *cmd)
+void    ft_exec_cmd_n_evaluate(t_lstack *a, t_lstack *cmd)
 {
     t_lstack *b;
+    t_node *iter;
     int i;
 
-    b = ft_init_stack();
     i = 0;
+    b = ft_init_stack();
+    iter = cmd->front;
     if (!b)
         ft_error_all(a, b, cmd);
-    //if (ft_evaluate_stack(a, b)) // pe pas utile faire cette verif ici
-    //    ft_exit(a, b, cmd, "OK\n");
-    while (cmd[i] != 0)
+    while (iter)
     {
-        ft_exec_cmd(cmd[i], a, b);
-        i++;
+        ft_exec_cmd(iter->n, a, b);
+        iter = iter->next;;
     }
+    t_node *itera;//
+    t_node *iterb;
+    itera = a->front;
+    iterb = b->front;
+    printf("check exit\n");
+    printf("STACK A\n");
+    if (itera)
+    {
+        while (itera)
+        {
+            printf("%d\n", (int)itera->n);
+            itera = itera->next;
+        }
+    }
+    printf("STACK B\n");
+    if (iterb)
+    {
+        while (iterb)
+        {
+            printf("%d\n", (int)iterb->n);
+            iterb = iterb->next;
+        }
+    }//
     if (ft_evaluate_stack(a, b))
         ft_exit(a, b, cmd, "OK\n");
     else
