@@ -25,7 +25,7 @@ int     main(int argc, char **argv)
         }
         t_node *iter;
         iter = a->front;
-        printf("check entree\n");
+        printf("check entree\n"); //
         while (iter)
         {
             printf("%d\n", (int)iter->n);

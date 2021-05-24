@@ -64,6 +64,7 @@ void    ft_duplicates_check(t_lstack *a, int *tab, int c)
         {
             if (tab[j] == iter->n)
             {
+                printf("following value is a duplicate %d\n", iter->n); //
                 free(tab);
                 ft_error_stack(a);
             }
