@@ -74,7 +74,4 @@ void    ft_exec_cmd(int cmd, t_lstack *a, t_lstack *b);
 
 void    ft_evaluate_then_sort(t_lstack *a, t_lstack **cmd);
 
-
-int    ft_find_in_stack_range(t_lstack *s, int rstart, int rend);
-
 #endif

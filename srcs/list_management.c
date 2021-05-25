@@ -101,20 +101,3 @@ int    ft_queue_to_stack(t_lstack *s, int n)
     }
     return (1);
 }
-
-int    ft_find_in_stack_range(t_lstack *s, int rstart, int rend)
-{
-    t_node *iter;
-    int count;
-
-    count = 1;
-    iter = s->front;
-    while (iter)
-    {
-        if (iter->n >= rstart && iter->n <= rend)
-            return (count);
-        iter = iter->next;
-        count++;
-    }
-    return (0);
-}
