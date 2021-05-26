@@ -1,6 +1,6 @@
 #include "pushswap.h"
 
-void    ft_pop_n_add_to_other_stack(t_lstack *o, t_lstack *d) // pa et pb
+void    ft_pop_n_add_to_other_stack(t_lstack *o, t_lstack *d)
 {
     if (!o->front)
         return ;
@@ -8,7 +8,7 @@ void    ft_pop_n_add_to_other_stack(t_lstack *o, t_lstack *d) // pa et pb
     ft_remove_from_stack(o);
 }
 
-void    ft_push_top_to_bottom(t_lstack *s) // ra et rb meme stack
+void    ft_push_top_to_bottom(t_lstack *s)
 {
     t_node *tmp;
 
@@ -24,7 +24,7 @@ void    ft_push_top_to_bottom(t_lstack *s) // ra et rb meme stack
     s->front->next = tmp->next;
 }
 
-void    ft_push_bottom_to_top(t_lstack *s) // rra et rrb meme stack
+void    ft_push_bottom_to_top(t_lstack *s)
 {
     t_node *tmp;
 
@@ -46,7 +46,7 @@ void    ft_push_bottom_to_top(t_lstack *s) // rra et rrb meme stack
     s->rear->next = NULL;
 }
 
-void    ft_swap_stack_top_two_values(t_lstack *s) //sa et sb
+void    ft_swap_stack_top_two_values(t_lstack *s)
 {
     t_node *tmp;
 

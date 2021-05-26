@@ -33,12 +33,12 @@ LIB_LIBFT_DIR	= $(LIBS_DIR)/libft.a
 #                               Sources filenames                              #
 ################################################################################
 
-#SRCS		=	$(notdir $(shell find $(SRCS_DIR) -type f -name *.c))
-#SRCS		=	
-SRCS_SWAP		=	main_swap.c sort_arg.c list_management.c evaluate_then_sort.c \
-					parse_arg.c error.c exec_cmd_n_evaluate.c #retirer ce dernier fichier qd poss
+SRCS_SWAP		=	main_swap.c sort_arg.c list_management.c exec_cmd.c\
+					parse_arg.c error.c sort_small_stack.c sort_big_stack.c \
+					quicksort_get_pivot.c evaluate_stack.c
 SRCS_CHECKER	=	main_checker.c parse_cmd.c list_management.c error.c \
-					parse_arg.c exec_cmd_n_evaluate.c sort_arg.c
+					parse_arg.c exec_cmd.c sort_arg.c \
+					evaluate_stack.c 
 
 ################################################################################
 #                              Commands and arguments                          #
@@ -48,7 +48,6 @@ CC			=	@gcc
 CFLAGS		=	-Wall -Wextra -Werror -g3 -I$(HEADERS_DIR) -fsanitize=address
 LDFLAGS 	=	-L . $(LIB_LIBFT_DIR) -fsanitize=address
 RM			=	@rm -f
-#BUFSIZE		=	-D BUFFER_SIZE=32
 
 ################################################################################
 #                                 Defining colors                              #

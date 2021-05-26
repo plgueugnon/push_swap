@@ -25,7 +25,7 @@ void    ft_remove_from_stack(t_lstack *s)
     else
     {
         tmp = s->front;
-        s->front = s->front->next; // verif si pas besoin modif s->front->next
+        s->front = s->front->next;
         free(tmp);
         tmp = NULL;
     }
@@ -33,18 +33,11 @@ void    ft_remove_from_stack(t_lstack *s)
 
 void    ft_cleanup_stack(t_lstack *s)
 {
-    while (!ft_stack_is_empty(s))
+    while (s->front)
         ft_remove_from_stack(s);
     if (s)
         free(s);
     s = NULL;
-}
-
-int     ft_stack_is_empty(t_lstack *s)
-{
-    if (s->front == NULL)
-        return (1);
-    return (0);
 }
 
 int    ft_add_to_stack(t_lstack *s, int n)
@@ -59,7 +52,7 @@ int    ft_add_to_stack(t_lstack *s, int n)
         tmp->n = n;
         tmp->next = NULL;
     }
-    if (!ft_stack_is_empty(s))
+    if (s->front)
     {
         tmp->next = s->front;
         s->front = tmp;
@@ -87,7 +80,7 @@ int    ft_queue_to_stack(t_lstack *s, int n)
         tmp->n = n;
         tmp->next = NULL;
     }
-    if (!ft_stack_is_empty(s))
+    if (s->front)
     {
         s->rear->next = tmp;
         s->rear = tmp;

@@ -61,17 +61,27 @@ void    ft_push_top_to_bottom(t_lstack *s);
 void    ft_push_bottom_to_top(t_lstack *s);
 void    ft_swap_stack_top_two_values(t_lstack *s);
 
+int     ft_evaluate_stack(t_lstack *a, t_lstack *b);
 int     ft_stack_max_value(t_lstack *s);
 int     ft_stack_min_value(t_lstack *s);
 int     ft_index_value(t_lstack *s, int nb);
+int     ft_stack_len(t_lstack *s);
 
 void    ft_sort_three(t_lstack *a, t_lstack *b, t_lstack *cmd);
+void    ft_empty_stack(t_lstack *a, t_lstack *b, t_lstack *cmd, int ccode);
+void    ft_sort_small_stack(t_lstack *a, t_lstack *b, t_lstack *cmd, int total);
 
-
-int     ft_evaluate_stack(t_lstack *a, t_lstack *b);
 void    ft_exec_rotate_cmd(int cmd, t_lstack *a, t_lstack *b);
 void    ft_exec_cmd(int cmd, t_lstack *a, t_lstack *b);
 
 void    ft_evaluate_then_sort(t_lstack *a, t_lstack **cmd);
+
+void    ft_exec_n_stash_cmd(t_lstack *a, t_lstack *b, t_lstack *cmd, int ccode);
+
+void    ft_get_pivot(t_lstack *a, t_lstack *b, t_lstack *cmd, t_lstack *pivot);
+
+void    ft_sort_big_stack(t_lstack *a, t_lstack *b, t_lstack *cmd);
+void    ft_quicksort(t_lstack *a, t_lstack *b, t_lstack *cmd, t_lstack *pivot);
+void    ft_eval_pivot(t_lstack *a, t_lstack *b, t_lstack *cmd, t_lstack *pivot);
 
 #endif
