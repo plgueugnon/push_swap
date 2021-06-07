@@ -45,8 +45,8 @@ SRCS_CHECKER	=	main_checker.c parse_cmd.c list_management.c error.c \
 ################################################################################
 
 CC			=	@gcc
-CFLAGS		=	-Wall -Wextra -Werror -g3 -I$(HEADERS_DIR) -fsanitize=address
-LDFLAGS 	=	-L . $(LIB_LIBFT_DIR) -fsanitize=address
+CFLAGS		=	-Wall -Wextra -Werror -g3 -I$(HEADERS_DIR) #-fsanitize=address
+LDFLAGS 	=	-L . $(LIB_LIBFT_DIR) #-fsanitize=address
 RM			=	@rm -f
 
 ################################################################################

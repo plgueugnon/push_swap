@@ -49,6 +49,26 @@ int	ft_check_char_n_len(char *str, t_lstack *a)
     return (i);
 }
 
+void    ft_check_no_double_zero(t_lstack *a, int *tab, int c)
+{
+    int i;
+    int flag;
+
+    i = 0;
+    flag = 0;
+    while (i < c)
+    {
+        if (tab[i] == 0)
+            flag++;
+        if (flag > 1)
+        {
+            free(tab);
+            ft_error_stack(a);
+        }
+        i++;
+    }
+}
+
 void    ft_duplicates_check(t_lstack *a, int *tab, int c)
 {
     int i;
@@ -62,7 +82,7 @@ void    ft_duplicates_check(t_lstack *a, int *tab, int c)
         j = 0;
         while (j <= i)
         {
-            if (tab[j] == iter->n)
+            if (tab[j] == iter->n && iter->n != 0)
             {
                 free(tab);
                 ft_error_stack(a);
@@ -72,6 +92,19 @@ void    ft_duplicates_check(t_lstack *a, int *tab, int c)
         tab[i] = iter->n;
         i++;
         iter = iter->next;
+    }
+    ft_check_no_double_zero(a, tab, c);
+}
+
+void    ft_init_tab(int *tab, int c)
+{
+    int i;
+
+    i = 0;
+    while (i < c)
+    {
+        tab[i] = 0;
+        i++;
     }
 }
 
@@ -92,7 +125,9 @@ void    ft_check_no_duplicates(t_lstack *a)
     tab = malloc(sizeof(int) * c);
     if (!tab)
         ft_error_stack(a);
+    ft_init_tab(tab, c);
     ft_duplicates_check(a, tab, c);
+    free(tab);
 }
 
 void    ft_parse_arg(char *argv, t_lstack *a)

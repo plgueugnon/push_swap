@@ -86,9 +86,9 @@ void    ft_get_pivot(t_lstack *a, t_lstack *b, t_lstack *cmd, t_lstack *pivot)
 {
     int *tab;
     int size;
-    int i;
+    //int i;
 
-    i = 0;
+    //i = 0;
     size = ft_stack_len(a);
     tab = malloc(sizeof(int) * size);
     if (!tab)

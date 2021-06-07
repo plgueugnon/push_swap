@@ -92,6 +92,7 @@ void    ft_parse_cmd(t_lstack **cmd, t_lstack *a)
     {
         list = ft_lst_append(list, line);
     }
+    free(line);
     ft_check_cmd_validity(list, a);
     ft_transform_cmd_list_to_stack(list, a, cmd);
 }

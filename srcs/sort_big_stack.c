@@ -49,9 +49,9 @@ static void    ft_sort_b(t_lstack *a, t_lstack *b, t_lstack *cmd)
     while (b->front)
     {
         i = ft_index_value(b, ft_stack_max_value(b));
-        if (i == 1)
-            ft_exec_n_stash_cmd(a, b, cmd, SB);
-        else if (i < s / 2)
+        // if (i == 1)
+        //     ft_exec_n_stash_cmd(a, b, cmd, SB); // fait planter checker ecole
+        if (i < s / 2)
             while (i--)
                 ft_exec_n_stash_cmd(a, b, cmd, RB);
         else

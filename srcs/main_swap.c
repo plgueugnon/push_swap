@@ -86,5 +86,6 @@ int     main(int argc, char **argv)
         }
         ft_evaluate_then_sort(a, &cmd);
     }
+    ft_cleanup_stack(a);
     return (0);
 }
