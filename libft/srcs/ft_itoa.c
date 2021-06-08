@@ -6,7 +6,7 @@
 /*   By: pgueugno <pgueugno@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/11 17:04:29 by pgueugno          #+#    #+#             */
-/*   Updated: 2021/01/06 13:52:16 by pgueugno         ###   ########.fr       */
+/*   Updated: 2021/06/08 14:55:39 by pgueugno         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -64,7 +64,7 @@ static char	*ft_cpy_str(char *s, int start, int len)
 	return (dst);
 }
 
-char		*ft_itoa(int n)
+char	*ft_itoa(int n)
 {
 	char	*str;
 	int		s;

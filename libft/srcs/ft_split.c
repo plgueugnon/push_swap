@@ -6,20 +6,20 @@
 /*   By: pgueugno <pgueugno@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/11 15:52:33 by pgueugno          #+#    #+#             */
-/*   Updated: 2021/01/06 15:58:50 by pgueugno         ###   ########.fr       */
+/*   Updated: 2021/06/08 14:57:55 by pgueugno         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-static int		ft_check_sep(const char src, char sep)
+static int	ft_check_sep(const char src, char sep)
 {
 	if (src == sep)
 		return (1);
 	return (0);
 }
 
-static int		ft_count_lines(const char *s, char c)
+static int	ft_count_lines(const char *s, char c)
 {
 	int	l;
 	int	i;
@@ -40,14 +40,14 @@ static int		ft_count_lines(const char *s, char c)
 	return (l);
 }
 
-static void		ft_strcpy(char *answer, char *f, const char *s)
+static void	ft_strcpy(char *answer, char *f, const char *s)
 {
 	while (f < (char *)s)
 		*(answer++) = *(f++);
 	*answer = '\0';
 }
 
-static int		ft_fill_it(char const *s, char **answer, char c)
+static int	ft_fill_it(char const *s, char **answer, char c)
 {
 	char	*f;
 	int		k;
@@ -72,7 +72,7 @@ static int		ft_fill_it(char const *s, char **answer, char c)
 	return (1);
 }
 
-char			**ft_split(char const *s, char c)
+char	**ft_split(char const *s, char c)
 {
 	char	**answer;
 

@@ -6,7 +6,7 @@
 /*   By: pgueugno <pgueugno@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/11 15:58:44 by pgueugno          #+#    #+#             */
-/*   Updated: 2021/01/06 15:51:18 by pgueugno         ###   ########.fr       */
+/*   Updated: 2021/06/08 15:00:32 by pgueugno         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ static int	s_len(char const *s)
 	return (i);
 }
 
-char		*ft_substr(char const *s, unsigned int start, size_t len)
+char	*ft_substr(char const *s, unsigned int start, size_t len)
 {
 	int		i;
 	char	*dst;

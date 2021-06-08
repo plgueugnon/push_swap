@@ -6,7 +6,7 @@
 /*   By: pgueugno <pgueugno@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/11 15:56:51 by pgueugno          #+#    #+#             */
-/*   Updated: 2021/01/06 16:03:47 by pgueugno         ###   ########.fr       */
+/*   Updated: 2021/06/08 14:58:19 by pgueugno         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,7 +33,7 @@ static char	*ft_strcpy(char *dst, char *src)
 	return (dst);
 }
 
-char		*ft_strjoin(char const *s1, char const *s2)
+char	*ft_strjoin(char const *s1, char const *s2)
 {
 	int		len;
 	int		len1;

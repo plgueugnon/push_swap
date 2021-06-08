@@ -6,7 +6,7 @@
 /*   By: pgueugno <pgueugno@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/11 15:58:19 by pgueugno          #+#    #+#             */
-/*   Updated: 2021/01/07 14:58:30 by pgueugno         ###   ########.fr       */
+/*   Updated: 2021/06/08 14:59:08 by pgueugno         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -67,7 +67,7 @@ static char	*ft_sub_str(char const *s, unsigned int start, size_t len)
 	return (dst);
 }
 
-char		*ft_strtrim(char const *s1, char const *set)
+char	*ft_strtrim(char const *s1, char const *set)
 {
 	int		len;
 	char	*dst;

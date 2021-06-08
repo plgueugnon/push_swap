@@ -6,7 +6,7 @@
 #    By: pgueugno <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/01/05 10:07:13 by pgueugno          #+#    #+#              #
-#    Updated: 2021/03/01 11:20:43 by pgueugno         ###   ########.fr        #
+#    Updated: 2021/06/08 14:36:28 by pgueugno         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -40,7 +40,7 @@ SRCS		=	ft_atoi.c ft_lst_append.c ft_lstsize.c ft_putchar_fd.c\
 				ft_memmove.c ft_putstr_fd.c ft_strncmp.c ft_isdigit.c\
 				ft_lstlast.c ft_memset.c ft_split.c ft_strnstr.c ft_isprint.c\
 				ft_lstmap.c ft_numlen.c ft_strchr.c ft_strrchr.c ft_itoa.c\
-				ft_lstnew.c ft_putchar.c ft_strdup.c ft_strstr.c
+				ft_lstnew.c ft_putchar.c ft_strdup.c ft_strstr.c ft_atol.c
 
 ###############################################################################
 #							Commands and arguments						      #

@@ -6,7 +6,7 @@
 /*   By: pgueugno <pgueugno@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/27 11:12:16 by pgueugno          #+#    #+#             */
-/*   Updated: 2021/03/01 12:08:16 by pgueugno         ###   ########.fr       */
+/*   Updated: 2021/06/08 14:59:48 by pgueugno         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,7 +52,7 @@ char	*ft_strncpy(char *dst, char *src, int n)
 	return (dst);
 }
 
-int		ft_what_is_read(char **tmp, char **line)
+int	ft_what_is_read(char **tmp, char **line)
 {
 	char	*p;
 	char	*mem;
@@ -80,7 +80,7 @@ int		ft_what_is_read(char **tmp, char **line)
 	return (0);
 }
 
-int		get_next_line(int fd, char **line)
+int	get_next_line(int fd, char **line)
 {
 	static char	*tmp = NULL;
 

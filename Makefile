@@ -6,7 +6,7 @@
 #    By: pgueugno <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/01/21 14:58:12 by pgueugno          #+#    #+#              #
-#    Updated: 2021/03/09 20:25:56 by pgueugno         ###   ########.fr        #
+#    Updated: 2021/06/08 16:32:06 by pgueugno         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -35,10 +35,10 @@ LIB_LIBFT_DIR	= $(LIBS_DIR)/libft.a
 
 SRCS_SWAP		=	main_swap.c sort_arg.c list_management.c exec_cmd.c\
 					parse_arg.c error.c sort_small_stack.c sort_big_stack.c \
-					quicksort_get_pivot.c evaluate_stack.c
+					quicksort_get_pivot.c evaluate_stack.c utils.c
 SRCS_CHECKER	=	main_checker.c parse_cmd.c list_management.c error.c \
 					parse_arg.c exec_cmd.c sort_arg.c \
-					evaluate_stack.c 
+					evaluate_stack.c utils.c
 
 ################################################################################
 #                              Commands and arguments                          #
@@ -65,7 +65,9 @@ _CYAN		=	\033[96m
 OBJS_SWAP		=	$(addprefix $(OBJS_DIR)/, $(SRCS_SWAP:.c=.o))
 OBJS_CHECKER	=	$(addprefix $(OBJS_DIR)/, $(SRCS_CHECKER:.c=.o))
 
-all:	init_libft init_1 init_2 $(NAME_CHECKER) $(NAME_SWAP)
+all:	init_libft init_2 $(NAME_SWAP)
+
+bonus:	init_libft init_1 init_2 $(NAME_CHECKER) $(NAME_SWAP)
 
 init_1:
 		@ if test -f $(NAME_CHECKER);\
